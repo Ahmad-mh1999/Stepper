@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Stepper/static/css/main.c5b27f20.css",
+    "main.js": "/Stepper/static/js/main.826982fe.js",
+    "static/js/787.28cb0dcd.chunk.js": "/Stepper/static/js/787.28cb0dcd.chunk.js",
+    "static/media/background-login.png": "/Stepper/static/media/background-login.a4aa2db715692467fcee.png",
+    "static/media/icon.jpg": "/Stepper/static/media/icon.ba0a0f3bf7e4b4344add.jpg",
+    "index.html": "/Stepper/index.html",
+    "main.c5b27f20.css.map": "/Stepper/static/css/main.c5b27f20.css.map",
+    "main.826982fe.js.map": "/Stepper/static/js/main.826982fe.js.map",
+    "787.28cb0dcd.chunk.js.map": "/Stepper/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5b27f20.css",
+    "static/js/main.826982fe.js"
+  ]
+}
