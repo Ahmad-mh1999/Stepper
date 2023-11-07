@@ -7,24 +7,7 @@ function Step2(props) {
     const [facebookAccount, setFacebookAccount] = useState("");
     const [behanceAccount, setBehanceAccount] = useState("");
     const [linkedInAccount, setLinkedInAccount] = useState("");
-    function handleChange(e) {
-        function validNumber()
-            {
-                if(e.target.validity.valid){
-                    return e.target.value
-                }else{
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Please enter valid phone number',
-                        });
-                    return ''
-                }
-            }
-        
-        setPhone(validNumber)
-        props.onSubmit(phone);
-    }
+
     return (
         <div>
             <div className="Ah-container">
@@ -41,7 +24,7 @@ function Step2(props) {
                                     pattern='[0-9]*'
                                     value={phone}
                                     placeholder='+963-'
-                                    onChange={handleChange}
+                                    onChange={(e)=> setPhone(e.target.value)}
                                 />
                             </div>
                             <div className="col-lg-6 col-sm-12 d-flex flex-column">

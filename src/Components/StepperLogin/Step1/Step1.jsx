@@ -16,56 +16,8 @@ function Step1(props) {
     const [company_Size, setcompany_Size] = useState('');
     const [company_Role, setCompany_Role] = useState('');
     const [city, setCity] = useState('');
-    function valid() {
-        if (company_name !== '' && Full_name !== '' && contact_Number !== '' && company_Fields !== '' && company_Role !== '') {
-            props.onSubmit('next');
-        } else {
-            props.onSubmit('');
-        }
-    }
-    function companyNameChange(e) {
-        setCompany_name(e.target.value)
-        valid()
-    }
-    function fullNameChange(e) {
-        setFull_name(e.target.value)
-        valid()
-    }
-    function cityChange(e) {
-        
-        setCity(e.target.value)
-        console.log(city)
-        valid()
-    }
-    function contactNumbeChange(e) {
-        function validNumber() {
-            if (e.target.validity.valid) {
-                return e.target.value
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Please enter valid phone number',
-                });
-                return ''
-            }
-        }
+}
 
-        setcontact_Number(validNumber)
-        valid()
-    }
-    function companyFieldsChange(e) {
-        setcompany_Fields(e.target.value)
-        valid()
-    }
-    function companySizeChange(e) {
-        setcompany_Size(e.target.value)
-        valid()
-    }
-    function companyRoleChange(e) {
-        setCompany_Role(e.target.value)
-        valid()
-    }
     return (
         <div>
             <div className="Ah-container">
@@ -81,7 +33,7 @@ function Step1(props) {
                                     type="text"
                                     value={company_name}
                                     placeholder='Example: focal X Agency'
-                                    onChange={companyNameChange}
+                                    onChange={(e)=> setCompany_name(e.target.value)}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
@@ -90,12 +42,12 @@ function Step1(props) {
                                     type="text"
                                     value={company_Fields}
                                     placeholder='Example: SoftWare Servives'
-                                    onChange={companyFieldsChange}
+                                    onChange={(e)=> setcompany_Fields(e.target.value)}
                                 />
                             </div>
                             <div className=' col-lg-6 col-sm-12 d-flex flex-column '>
                                 <label for="city" className="star mb-2">City </label>
-                                <select id="city" value={city} onChange={cityChange}>
+                                <select id="city" value={city} onChange={(e)=> setCity(e.target.value)}>
                                     <option selected value="">Select</option>
                                     <option value="Damascus">Damascus</option>
                                     <option value="Homs">Homs</option>
@@ -121,7 +73,7 @@ function Step1(props) {
                                     type="text"
                                     value={company_Size}
                                     placeholder='Example: 150 Employees'
-                                    onChange={companySizeChange}
+                                    onChange={(e)=> setcompany_Size(e.target.value)}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
@@ -148,7 +100,7 @@ function Step1(props) {
                                     type="text"
                                     value={Full_name}
                                     placeholder='Example: Osama Ibrahem Faroun'
-                                    onChange={fullNameChange}
+                                    onChange={(e)=> setFull_name(e.target.value)}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
@@ -158,7 +110,7 @@ function Step1(props) {
                                     pattern="[0-9]*"
                                     value={contact_Number}
                                     placeholder='+963'
-                                    onChange={contactNumbeChange}
+                                    onChange={(e)=> setcontact_Number(e.target.value)}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
@@ -167,7 +119,7 @@ function Step1(props) {
                                     type="text"
                                     value={company_Role}
                                     placeholder='Example: 150 Employees'
-                                    onChange={companyRoleChange}
+                                    onChange={(e)=> setCompany_Role(e.target.value)}
                                 />
                             </div>
                         </div>
@@ -176,6 +128,6 @@ function Step1(props) {
             </div>
         </div>
     )
-}
+
 
 export default Step1

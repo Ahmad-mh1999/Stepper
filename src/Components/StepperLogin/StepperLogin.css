@@ -59,7 +59,9 @@ button.nb-buttons3{
     button.nb-buttons2{
         font-size: 30px;
     }
-    
+    button.nb-buttons3{
+        font-size: 30px;
+    }
 }
 @media only screen and (max-width:500px){
     .Ah-StepperLogin{
