@@ -1,0 +1,90 @@
+:root{
+    --focal-x-main-color : #FF850099;
+}
+.Ah-StepperLogin {
+    background-image: url('./../../image/background-login.png') !important;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    background-color: lightgray 50%;
+    /* min-height: 100vh;
+    max-height: max-content; */
+    height: 100vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    
+}
+.Ah-StepperLogin>div span,a{
+    display: none;
+}
+button.nb-buttons1{
+    border: none;
+    background-color: transparent !important;
+    color:var(--focal-x-main-color);
+    font-size: 22px;
+    position: relative;
+    left: 75vw;
+
+
+}
+button.nb-buttons1::before{
+    content: '<< ';
+    color:var(--focal-x-main-color) ;
+}
+button.nb-buttons2{
+    border: none;
+    background-color: transparent !important;
+    color:var(--focal-x-main-color);
+    font-size: 22px;
+    position: relative;
+    left: 80vw;
+
+}
+button.nb-buttons2::after{
+    content: ' >>';
+    color:var(--focal-x-main-color) ;
+}
+button.nb-buttons3{
+    border: none;
+    background-color: transparent !important;
+    color:var(--focal-x-main-color);
+    font-size: 22px;
+    position: relative;
+    left: 80vw;
+}
+@media only screen and (min-width:1600px){
+    button.nb-buttons1{
+        font-size: 30px;
+    }
+    button.nb-buttons2{
+        font-size: 30px;
+    }
+    
+}
+@media only screen and (max-width:500px){
+    .Ah-StepperLogin{
+        padding: 0 !important;
+    }
+    button.nb-buttons1{
+        font-size: 18px;
+        left: 35vw;
+    }
+    button.nb-buttons2{
+        font-size: 18px;
+        left: 38vw;
+    }
+    button.nb-buttons3{
+        font-size: 18px;
+        left: 37vw;
+    }
+    /*this selector for the stepper circles
+    note i can not  */
+    .Ah-StepperLogin>div:nth-child(1)>div:nth-child(1)>div:nth-child(1),
+    .Ah-StepperLogin>div:nth-child(1)>div:nth-child(2)>div:nth-child(1),
+    .Ah-StepperLogin>div:nth-child(1)>div:nth-child(3)>div:nth-child(1),
+    .Ah-StepperLogin>div:nth-child(1)>div:nth-child(4)>div:nth-child(1){
+        width: 10px !important;
+        height: 10px !important;
+    }
+    
+}
