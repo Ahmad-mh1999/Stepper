@@ -1,24 +1,15 @@
 
 import { useState } from 'react';
 import './Step1.css'
-import Swal from 'sweetalert2';
-import MenuItem from '@mui/material/MenuItem';
-import { styled } from '@mui/material/styles';
-import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import InputBase from '@mui/material/InputBase';
-function Step1(props) {
-    const [company_name, setCompany_name] = useState('');
-    const [Full_name, setFull_name] = useState('');
-    const [contact_Number, setcontact_Number] = useState('');
-    const [company_Fields, setcompany_Fields] = useState('');
-    const [company_Size, setcompany_Size] = useState('');
-    const [company_Role, setCompany_Role] = useState('');
-    const [city, setCity] = useState('');
-}
-
-    return (
+function Step1(props){
+  
+ 
+   function handleValue(e) {
+        const target = e.target;
+        const { name, value } = target;
+        props.setValue(element => ({ ...props.values, [name]: value }));
+    }
+       return (
         <div>
             <div className="Ah-container">
                 <div className="Ah-container-white">
@@ -31,23 +22,26 @@ function Step1(props) {
                                 <label className='mb-1 star'>Company Name</label>
                                 <input
                                     type="text"
-                                    value={company_name}
+                                    value={props.values?.Company_Name ?? ''}
+                                    name='Company_Name'
                                     placeholder='Example: focal X Agency'
-                                    onChange={(e)=> setCompany_name(e.target.value)}
+                                    onChange={handleValue}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
                                 <label className='mb-1 star'>Company Fields </label>
                                 <input
                                     type="text"
-                                    value={company_Fields}
+                                    value={props.values?.Company_Fields ?? ''}
+                                    name='Company_Fields'
                                     placeholder='Example: SoftWare Servives'
-                                    onChange={(e)=> setcompany_Fields(e.target.value)}
+                                    onChange={handleValue}
+
                                 />
                             </div>
                             <div className=' col-lg-6 col-sm-12 d-flex flex-column '>
                                 <label for="city" className="star mb-2">City </label>
-                                <select id="city" value={city} onChange={(e)=> setCity(e.target.value)}>
+                                <select id="city" name='city' onChange={handleValue} >
                                     <option selected value="">Select</option>
                                     <option value="Damascus">Damascus</option>
                                     <option value="Homs">Homs</option>
@@ -65,27 +59,41 @@ function Step1(props) {
                                     <option value="Idlib">Idlib</option>
                                     <option value="Outside Syria">Outside Syria</option>
                                 </select>
-                                
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
                                 <label className='mb-1'>Company Size</label>
                                 <input
                                     type="text"
-                                    value={company_Size}
                                     placeholder='Example: 150 Employees'
-                                    onChange={(e)=> setcompany_Size(e.target.value)}
+                                    name='Company_Size'
+                                    value={props.values?.Company_Size ?? ''}
+                                    onChange={handleValue}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
                                 <label className='mb-1'>Year Founded</label>
                                 <input
                                     type="date"
+                                    onChange={handleValue}
+                                    name='Year_Founded'
+                                    value={props.values?.Year_Founded ?? ''}
                                 />
                             </div>
                             <div class="col-lg-6 col-sm-12 d-flex flex-column position-relative">
-                                <label>Company Logo </label>
-                                <input type="text" class="custom-input" readonly />
-                                <input type="file" id="file-upload" class="hidden-input" />
+                                <label>Company Logo</label>
+                                <input
+                                    type="text"
+                                    class="custom-input"
+                                    readonly
+                                />
+                                <input
+                                    type="file"
+                                    class="hidden-input"
+                                    onChange={handleValue}
+                                    id="file-upload"
+                                    name='Company_Logo'
+                                    value={props.values?.Company_Logo ?? ''}
+                                />
                             </div>
                         </div>
                     </form>
@@ -98,9 +106,10 @@ function Step1(props) {
                                 <label className='mb-1 star'>Full Name </label>
                                 <input
                                     type="text"
-                                    value={Full_name}
                                     placeholder='Example: Osama Ibrahem Faroun'
-                                    onChange={(e)=> setFull_name(e.target.value)}
+                                    onChange={handleValue}
+                                    name='Full_Name'
+                                    value={props.values?.Full_Name ?? ''}
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
@@ -108,26 +117,35 @@ function Step1(props) {
                                 <input
                                     type="tel"
                                     pattern="[0-9]*"
-                                    value={contact_Number}
                                     placeholder='+963'
-                                    onChange={(e)=> setcontact_Number(e.target.value)}
+                                    onChange={handleValue}
+                                    name='Contact_Number'
+                                    value={props.values?.Contact_Number ?? ''}
+
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
                                 <label className='mb-1 star'>Job Role</label>
                                 <input
                                     type="text"
-                                    value={company_Role}
                                     placeholder='Example: 150 Employees'
-                                    onChange={(e)=> setCompany_Role(e.target.value)}
+                                    onChange={handleValue}
+                                    name='Job_Role'
+                                    value={props.values?.Job_Role ?? ''}
                                 />
                             </div>
                         </div>
-                    </form>
+                   </form>
                 </div>
             </div>
         </div>
     )
+
+
+}
+
+
+
 
 
 export default Step1

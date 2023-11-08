@@ -1,15 +1,15 @@
 import './Step2.css'
 import { useState } from 'react';
-import Swal from 'sweetalert2'
-function Step2(props) {
-    const [phone, setPhone] = useState("");
-    const [companyWebsite, setcompanyWebsite] = useState("");
-    const [facebookAccount, setFacebookAccount] = useState("");
-    const [behanceAccount, setBehanceAccount] = useState("");
-    const [linkedInAccount, setLinkedInAccount] = useState("");
 
+function Step2(props) {
+    function handleInputValue(e) {
+        const target = e.target;
+        const { name, value } = target;
+        props.setInputValues(element => ({ ...props.InputValues, [name]: value }));
+    }
+  
     return (
-        <div>
+       <div>
             <div className="Ah-container">
                 <div className="Ah-container-white">
                     <div className="Ah-title">
@@ -22,49 +22,57 @@ function Step2(props) {
                                 <input
                                     type="tel"
                                     pattern='[0-9]*'
-                                    value={phone}
+                                    onChange={handleInputValue}
+                                    name='Phone_Number'
+                                    value={props.InputValues?.Phone_Number?? ''}
                                     placeholder='+963-'
-                                    onChange={(e)=> setPhone(e.target.value)}
+                                   
                                 />
                             </div>
                             <div className="col-lg-6 col-sm-12 d-flex flex-column">
                                 <label className='mb-1'>Company Website</label>
                                 <input
                                     type="text"
-                                    value={companyWebsite}
+                                    name='Company_Website'
+                                    value={props.InputValues?.Company_Website?? ''}
+                                    onChange={handleInputValue}                                  
                                     placeholder='Example: www.focal-x.com'
-                                    onChange={(e) => setcompanyWebsite(e.target.value)}
+                                   
                                 />
                             </div>
                             <div className="col-lg-6 col-sm-12 d-flex flex-column">
                                 <label className='mb-1'>Facebook Account</label>
                                 <input
                                     type="email"
-                                    value={facebookAccount}
-                                    placeholder='Example: @taplin_33 '
-                                    onChange={(e) => setFacebookAccount(e.target.value)}
+                                    name='Facebook_Account'
+                                    placeholder='Example: @taplin_33'
+                                    onChange={handleInputValue}                                  
+                                    value={props.InputValues?.Facebook_Account?? ''}                                
                                 />
                             </div>
                             <div className='col-lg-6 col-sm-12 d-flex flex-column'>
                                 <label className='mb-1'>Behance Account</label>
                                 <input
                                     type="email"
-                                    value={behanceAccount}
-                                    placeholder='Example: @taplin_33 '
-                                    onChange={(e) => setBehanceAccount(e.target.value)}
+                                    name='Behance_Account'
+                                    placeholder='Example: @taplin_33'
+                                    onChange={handleInputValue}
+                                    value={props.InputValues?.Behance_Account?? ''}                                                                   
                                 />
                             </div>
                             <div className="col-lg-6 col-sm-12 d-flex flex-column">
                                 <label className='mb-1'>Linked-in Account</label>
                                 <input
                                     type="email"
-                                    value={linkedInAccount}
+                                    name='Linked_in_Account'
+                                    value={props.InputValues?.Linked_in_Account?? ''}                                                                   
                                     placeholder='Example: @taplin_33 '
-                                    onChange={(e) => setLinkedInAccount(e.target.value)}
+                                    onChange={handleInputValue}                                 
                                 />
                             </div>
                         </div>
                     </form>
+               
                 </div>
             </div>
         </div>
