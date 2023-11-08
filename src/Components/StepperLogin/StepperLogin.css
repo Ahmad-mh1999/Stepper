@@ -24,8 +24,6 @@ button.nb-buttons1{
     font-size: 22px;
     position: relative;
     left: 75vw;
-
-
 }
 button.nb-buttons1::before{
     content: '<< ';
@@ -38,6 +36,7 @@ button.nb-buttons2{
     font-size: 22px;
     position: relative;
     left: 80vw;
+    padding-bottom:2rem!important;
 
 }
 button.nb-buttons2::after{
@@ -69,16 +68,18 @@ button.nb-buttons3{
     }
     button.nb-buttons1{
         font-size: 18px;
-        left: 35vw;
+        left: 25vw;
+        padding-bottom: 2rem !important;
     }
     button.nb-buttons2{
         font-size: 18px;
-        left: 38vw;
+        left: 28vw;
     }
     button.nb-buttons3{
         font-size: 18px;
-        left: 37vw;
+        left: 25vw;
     }
+    
     /*this selector for the stepper circles
     note i can not  */
     .Ah-StepperLogin>div:nth-child(1)>div:nth-child(1)>div:nth-child(1),
@@ -89,4 +90,26 @@ button.nb-buttons3{
         height: 10px !important;
     }
     
+}
+
+@media  screen and (min-width:502px) and (max-width:1118px){
+    button.nb-buttons1{
+        font-size: 18px;
+        left: 52vw;
+        padding-bottom: 2rem !important;
+    }
+    button.nb-buttons2{
+        font-size: 18px;
+        left: 58vw;
+    }
+    button.nb-buttons3{
+        font-size: 18px;
+        left: 58vw;
+    }
+}
+
+
+@media only screen and (max-width:260px){
+
+
 }
